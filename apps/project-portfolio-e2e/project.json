@@ -1,0 +1,9 @@
+{
+  "name": "project-portfolio-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/project-portfolio-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["project-portfolio"],
+  "// targets": "to see all targets run: nx show project project-portfolio-e2e --web",
+  "targets": {}
+}
