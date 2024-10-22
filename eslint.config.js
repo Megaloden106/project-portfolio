@@ -1,9 +1,17 @@
 const nx = require('@nx/eslint-plugin');
+const eslintConfigPrettier = require('eslint-config-prettier');
+const eslint = require('@eslint/js');
+const tseslint = require('typescript-eslint');
 
 module.exports = [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
+  ...tseslint.config(
+    eslint.configs.recommended,
+    ...tseslint.configs.recommended,
+  ),
+  eslintConfigPrettier,
   {
     ignores: ['**/dist'],
   },
@@ -23,6 +31,12 @@ module.exports = [
           ],
         },
       ],
+    },
+  },
+  {
+    files: ['**/*.config.js'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
     },
   },
   {
